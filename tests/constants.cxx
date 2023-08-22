@@ -1,27 +1,27 @@
 #include <gtest/gtest.h>
 
-#include <chess++/constants.hxx>
+#include <chess++/core.hxx>
 
-using namespace chess::constants;
+using namespace chess;
 
 TEST(ConstantsTest, FileTest) {
-  EXPECT_EQ(A, 0);
-  EXPECT_EQ(B, 1);
-  EXPECT_EQ(C, 2);
-  EXPECT_EQ(D, 3);
-  EXPECT_EQ(E, 4);
-  EXPECT_EQ(F, 5);
-  EXPECT_EQ(G, 6);
-  EXPECT_EQ(H, 7);
+  EXPECT_EQ(file::A, 0);
+  EXPECT_EQ(file::B, 1);
+  EXPECT_EQ(file::C, 2);
+  EXPECT_EQ(file::D, 3);
+  EXPECT_EQ(file::E, 4);
+  EXPECT_EQ(file::F, 5);
+  EXPECT_EQ(file::G, 6);
+  EXPECT_EQ(file::H, 7);
 }
 
 TEST(ConstantsTest, RankTest) {
-  EXPECT_EQ(R1, 0);
-  EXPECT_EQ(R2, 1);
-  EXPECT_EQ(R3, 2);
-  EXPECT_EQ(R4, 3);
-  EXPECT_EQ(R5, 4);
-  EXPECT_EQ(R6, 5);
-  EXPECT_EQ(R7, 6);
-  EXPECT_EQ(R8, 7);
+  EXPECT_EQ(rank::R1, 0);
+  EXPECT_EQ(rank::R2, 1);
+  EXPECT_EQ(rank::R3, 2);
+  EXPECT_EQ(rank::R4, 3);
+  EXPECT_EQ(rank::R5, 4);
+  EXPECT_EQ(rank::R6, 5);
+  EXPECT_EQ(rank::R7, 6);
+  EXPECT_EQ(rank::R8, 7);
 }

@@ -1,11 +1,23 @@
 #include "square.hxx"
 
 namespace chess {
-Square::Square(constants::square square) { _name = square; }
+Square::Square(square::square square) {
+  _name = square;
+  _piece = nullptr;
+}
 
-constants::square Square::name() { return _name; }
+Square::Square(square::square square, Piece &piece) {
+  _name = square;
+  set_piece(piece);
+}
 
-constants::file Square::file() { return constants::file(_name % 8); }
+square::square Square::name() { return _name; }
 
-constants::rank Square::rank() { return constants::rank(_name / 8); }
-} // namespace chess
+file::file Square::file() { return file::file(_name % 8); }
+
+rank::rank Square::rank() { return rank::rank(_name / 8); }
+
+Piece &Square::get_piece() { return *_piece; }
+
+void Square::set_piece(Piece &piece) { _piece = &piece; }
+}  // namespace chess

@@ -1,17 +1,15 @@
-#include "chess++/square.hxx"
+#include <fmt/format.h>
 
-#include <fmt/core.h>
+#include "chess++/core.hxx"
 
 int main() {
-  chess::Square sq(chess::constants::B1);
+  chess::Piece piece(chess::piece::pawn, chess::color::white);
 
-  auto name = sq.name();
-  auto file = sq.file();
-  auto rank = sq.rank();
+  chess::types::PieceList list;
+  list.push_back(piece);
 
-  std::printf("name: %d\n", name);
-  std::printf("file: %d\n", file);
-  std::printf("rank: %d\n", rank);
+  chess::Square square(chess::square::E4);
+  square.set_piece(list[0]);
 
   return 0;
 }
