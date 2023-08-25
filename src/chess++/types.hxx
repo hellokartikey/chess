@@ -6,11 +6,11 @@
 
 #include "constants.hxx"
 #include "move.hxx"
+#include "piece.hxx"
 #include "square.hxx"
 
 namespace chess::types {
 using move_list = std::vector<Move>;
-using board = std::array<Square, constants::num_squares>;
 }  // namespace chess::types
 
 #endif

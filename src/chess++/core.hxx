@@ -5,7 +5,7 @@
 #include "constants.hxx"
 #include "move.hxx"
 #include "piece.hxx"
-#include "piece_list.hxx"
+#include "ply.hxx"
 #include "square.hxx"
 #include "types.hxx"
 

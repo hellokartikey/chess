@@ -15,19 +15,19 @@
 
 namespace chess {
 class Square {
-  square::square _name;
-  Piece *_piece;
+  constants::square _name;
+  Piece* _piece;
 
  public:
-  Square(square::square square);
-  Square(square::square square, Piece &piece);
+  Square(constants::square square);
+  Square(constants::square square, Piece& piece);
 
-  square::square name();
-  file::file file();
-  rank::rank rank();
+  constants::square name();
+  constants::file file();
+  constants::rank rank();
 
-  Piece &get_piece();
-  void set_piece(Piece &piece);
+  Piece& piece();
+  void piece(Piece& piece);
 };
 }  // namespace chess
 

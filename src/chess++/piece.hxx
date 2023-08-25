@@ -8,14 +8,14 @@
 
 namespace chess {
 class Piece {
-  piece::piece _type;
-  color::color _color;
+  constants::piece _type;
+  constants::color _color;
 
  public:
-  Piece(piece::piece type, color::color color);
+  Piece(constants::piece type, constants::color color);
 
-  piece::piece get_type();
-  color::color get_color();
+  constants::piece type();
+  constants::color color();
 };
 }  // namespace chess
 
