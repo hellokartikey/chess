@@ -1,7 +1,6 @@
 #ifndef CHESSPP_SQUARE_H
 #define CHESSPP_SQUARE_H
 
-#include <functional>
 #include <vector>
 
 #include "constants.h"

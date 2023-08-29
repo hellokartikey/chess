@@ -1,7 +1,6 @@
 #ifndef CHESSPP_PIECE_H
 #define CHESSPP_PIECE_H
 
-#include <functional>
 #include <optional>
 #include <vector>
 
@@ -33,13 +32,13 @@ class Piece {
 }  // namespace chess
 
 namespace chess::types {
-using piece_optional = std::optional<std::reference_wrapper<Piece>>;
-using piece_vector = std::vector<std::reference_wrapper<Piece>>;
+using piece_optional = std::optional<Piece>;
+using piece_vector = std::vector<Piece>;
 using nullpiece = std::nullopt_t;
 }  // namespace chess::types
 
 namespace chess {
-constexpr std::nullopt_t nullpiece = std::nullopt;
+constexpr types::nullpiece nullpiece = std::nullopt;
 }
 
 #endif

@@ -2,7 +2,6 @@
 #define CHESSPP_MOVE_H
 
 #include <array>
-#include <functional>
 #include <optional>
 #include <string_view>
 
@@ -34,7 +33,7 @@ class Move {
 
  private:
   int index_;
-  std::array<std::optional<std::reference_wrapper<Ply>>, 2> ply_;
+  std::array<std::optional<Ply>, 2> ply_;
 };
 }  // namespace chess
 
