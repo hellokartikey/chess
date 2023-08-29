@@ -1,6 +1,7 @@
 add_library(
   chess++ 
   core.h
+  fmt.h       fmt.cc
   board.h     board.cc
   constants.h constants.cc
   move.h      move.cc 
