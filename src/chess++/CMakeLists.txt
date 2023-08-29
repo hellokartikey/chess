@@ -1,13 +1,12 @@
 add_library(
-  chess++
-  board.hxx       board.cxx
-  constants.hxx   constants.cxx
-  core.hxx        core.cxx
-  move.hxx        move.cxx
-  piece.hxx       piece.cxx
-  ply.hxx         ply.cxx
-  square.hxx      square.cxx
-  types.hxx       types.cxx
+  chess++ 
+  core.h
+  board.h     board.cc
+  constants.h constants.cc
+  move.h      move.cc 
+  piece.h     piece.cc
+  ply.h       ply.cc
+  square.h    square.cc 
 )
 
 target_link_libraries(

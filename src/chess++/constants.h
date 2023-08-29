@@ -1,19 +1,23 @@
-#ifndef CHESSPP_CONSTANTS_HXX
-#define CHESSPP_CONSTANTS_HXX
+#ifndef CHESSPP_CONSTANTS_H
+#define CHESSPP_CONSTANTS_H
 
 #include <cstdint>
 
-/**API Reference
+/**API Example
  *
+ * // Squares
  * square::A1
  * square::H5
  *
+ * // Files
  * file::A
  * file::E
  *
+ * // Ranks
  * rank::R4
  * rank::R8
  *
+ * // Pieces
  * piece::pawn
  * piece::knight
  * piece::bishop
@@ -21,9 +25,9 @@
  * piece::queen
  * piece::king
  *
+ * // Colors
  * color::white
  * color::black
- *
  */
 
 namespace chess::constants {
@@ -46,17 +50,7 @@ enum rank { R1 = 0, R2 = 1, R3 = 2, R4 = 3, R5 = 4, R6 = 5, R7 = 6, R8 = 7 };
 
 enum piece { pawn, knight, bishop, rook, queen, king };
 
-enum color { white = 1, black = 0 };
+enum color { white = 0, black = 1 };
 }  // namespace chess::constants
-
-namespace chess::move {
-enum move { regular, promotion, en_passant, king_castle, queen_castle };
-
-enum legal { illegal = 0, legal = 1 };
-
-enum capture { no_capture = 0, is_capture = 1 };
-
-enum check { no_check = 0, is_check = 1 };
-}  // namespace chess::move
 
 #endif

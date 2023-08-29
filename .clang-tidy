@@ -1,0 +1,6 @@
+Checks: >
+    clang-analyzer-*,
+    cppcoreguidelines-*,
+    google-*,
+    modernize-*,
+    readability-*

@@ -1,6 +1,6 @@
 target_sources(
   ${TEST_TARGET}
-  PRIVATE constants.cxx
+  PRIVATE constants.cc
 )
 
 target_link_libraries(

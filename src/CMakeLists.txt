@@ -1,6 +1,6 @@
 target_sources(
   ${BUILD_TARGET}
-  PRIVATE main.cxx
+  PRIVATE main.cc
 )
 
 add_subdirectory(chess++)

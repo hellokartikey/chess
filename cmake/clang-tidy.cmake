@@ -1,9 +1,6 @@
 file(GLOB_RECURSE ALL_SOURCE_FILES *.cc *.h)
 
 add_custom_target(
-    clangformat
-    ALL
-    COMMAND /usr/bin/clang-format
-    -i
+    clang-tidy
     ${ALL_SOURCE_FILES}
 )
