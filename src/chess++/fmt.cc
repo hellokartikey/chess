@@ -4,107 +4,40 @@
 
 namespace chess::constants {
 std::string format_as(constants::square square) {
-  return format_as(constants::file(square % 8)) +
-         format_as(constants::rank(square / 8));
+  return fmt::format("{}{}", constants::file(square % 8),
+                     constants::rank(square / 8));
 }
 
 std::string format_as(constants::file file) {
-  std::string ret = "";
-  switch (file) {
-    case A:
-      ret = "A";
-      break;
-    case B:
-      ret = "B";
-      break;
-    case C:
-      ret = "C";
-      break;
-    case D:
-      ret = "D";
-      break;
-    case E:
-      ret = "E";
-      break;
-    case F:
-      ret = "F";
-      break;
-    case G:
-      ret = "G";
-      break;
-    case H:
-      ret = "H";
-      break;
-  }
-  return ret;
+  std::string rep = "ABCDEFGH";
+  return fmt::format("{}", rep[file]);
 }
 
 std::string format_as(constants::rank rank) {
-  std::string ret = "";
-  switch (rank) {
-    case R1:
-      ret = "1";
-      break;
-    case R2:
-      ret = "2";
-      break;
-    case R3:
-      ret = "3";
-      break;
-    case R4:
-      ret = "4";
-      break;
-    case R5:
-      ret = "5";
-      break;
-    case R6:
-      ret = "6";
-      break;
-    case R7:
-      ret = "7";
-      break;
-    case R8:
-      ret = "8";
-      break;
-  }
-  return ret;
+  std::string rep = "12345678";
+  return fmt::format("{}", rep[rank]);
 }
 
 std::string format_as(constants::piece piece) {
-  std::string ret;
-  switch (piece) {
-    case constants::pawn:
-      ret = "pawn";
-      break;
-    case constants::knight:
-      ret = "knight";
-      break;
-    case constants::bishop:
-      ret = "bishop";
-      break;
-    case constants::rook:
-      ret = "rook";
-      break;
-    case constants::queen:
-      ret = "queen";
-      break;
-    case constants::king:
-      ret = "king";
-      break;
-  }
-  return ret;
+  std::array<std::string, 6> rep = {"pawn", "knight", "bishop",
+                                    "rook", "queen",  "king"};
+  return rep[piece];
 }
 
 std::string format_as(constants::color color) {
-  std::string ret;
-  switch (color) {
-    case constants::white:
-      ret = "white";
-      break;
-    case constants::black:
-      ret = "black";
-      break;
-  }
-  return ret;
+  std::array<std::string, 2> rep = {"white", "black"};
+  return rep[color];
 }
 }  // namespace chess::constants
+
+namespace chess {
+std::string format_as(Piece piece) {
+  std::array<std::string, 2> rep = {"PNBRQK", "pnbrqk"};
+  return fmt::format("{}", rep[piece.color()][piece.type()]);
+}
+
+std::string format_as(Square sq) {
+  return fmt::format("  {}\n+---+\n| {} | {}\n+---+", sq.file(), sq.rank(),
+                     sq.piece());
+}
+}  // namespace chess

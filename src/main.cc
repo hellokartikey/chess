@@ -1,5 +1,7 @@
 #include <fmt/format.h>
 
+#include <iostream>
+
 #include "chess++/core.h"
 #include "chess++/fmt.h"
 
@@ -7,7 +9,10 @@ using namespace chess;
 using namespace chess::constants;
 
 int main() {
-  fmt::print("{}\n", constants::R1);
+  Piece piece(constants::pawn, constants::black);
+  Square sq(E4, piece);
+
+  fmt::print("{}\n", sq);
 
   return 0;
 }

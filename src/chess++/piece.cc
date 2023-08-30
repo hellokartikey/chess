@@ -1,8 +1,10 @@
 #include "piece.h"
 
 namespace chess {
-Piece::Piece(constants::piece type, constants::color color)
-    : type_(type), color_(color) {}
+Piece::Piece(constants::piece type, constants::color color) {
+  type_ = type;
+  color_ = color;
+}
 
 constants::piece Piece::type() { return type_; }
 
