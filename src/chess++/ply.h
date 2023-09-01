@@ -8,7 +8,7 @@
 #include "piece.h"
 
 /**API Example
- * Ply ply(e_pawn, double_north, E2, E4);
+ * Ply ply(e_pawn, move::double_pawn_push, square::E2, square::E4);
  *
  * // Get move type
  * ply.type();
@@ -29,7 +29,12 @@
  * // Ending square
  * ply.to();
  * ply.to(E4);
- *
+ * 
+ * // Check if promotion
+ * ply.promotion();
+ * 
+ * // Check if capture
+ * ply.capture();
  */
 
 namespace chess {
@@ -65,12 +70,12 @@ class Ply {
 }  // namespace chess
 
 namespace chess::types {
-using ply_optional = std::optional<Ply>;
+using PlyOptional = std::optional<Ply>;
 using nullply = std::nullopt_t;
 }  // namespace chess::types
 
 namespace chess {
-constexpr types::nullpiece nullply = std::nullopt;
+constexpr types::PlyOptional nullply = std::nullopt;
 }
 
 #endif

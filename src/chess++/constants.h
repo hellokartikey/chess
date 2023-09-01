@@ -10,12 +10,12 @@
  * square::H5
  *
  * // Files
- * file::A
- * file::E
+ * square::A
+ * square::E
  *
  * // Ranks
- * rank::R4
- * rank::R8
+ * square::R4
+ * square::R8
  *
  * // Pieces
  * piece::pawn
@@ -26,8 +26,8 @@
  * piece::king
  *
  * // Colors
- * color::white
- * color::black
+ * piece::white
+ * piece::black
  */
 
 namespace chess::square {

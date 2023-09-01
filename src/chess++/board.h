@@ -11,10 +11,10 @@
 
 /**API Example
  * Board board;
- * Board board(fen);
+ * Board board(fen); // TODO
  *
  * // Get reference to square object
- * board.square(constants::D4);
+ * board.square(square::D4);
  *
  * // Get FEN string for current board state
  * board.fen();
@@ -35,8 +35,8 @@ class Board {
   void fen(std::string_view fen);
 
  private:
-  types::square_vector board_;
-  types::piece_vector pieces_;
+  types::SquareVector board_;
+  types::PieceVector pieces_;
 };
 }  // namespace chess
 

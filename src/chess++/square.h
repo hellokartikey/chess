@@ -18,7 +18,7 @@
  * // Check if square has a piece on it
  * square.has_piece();
  *
- * // Put piece on
+ * // Put piece on (nullpiece to remove)
  * square.piece(piece);
  *
  * // Get piece reference
@@ -29,7 +29,6 @@ namespace chess {
 class Square {
  public:
   Square(square::name square);
-
   Square(square::name square, Piece& piece);
 
   const square::name name() const;
@@ -43,12 +42,12 @@ class Square {
 
  private:
   square::name name_;
-  types::piece_optional piece_;
+  types::PieceOptional piece_;
 };
 }  // namespace chess
 
 namespace chess::types {
-using square_vector = std::vector<Square>;
+using SquareVector = std::vector<Square>;
 }
 
 #endif

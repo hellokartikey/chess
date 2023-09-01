@@ -9,18 +9,14 @@
 #include "ply.h"
 
 /**API Example
+ * Move move;
  * Move move(ply_w, ply_b);
  *
- * move.white();
- * move.white(ply_w);
- * move.has_white();
- *
- * move.black();
- * move.black(ply_w);
- * move.has_black();
- *
- * move.index();
- * move.index(10);
+ * Get particular ply
+ * move.ply(piece::white);
+ * 
+ * Set particular ply
+ * move.ply(piece::black, ply);
  */
 
 namespace chess {
@@ -33,7 +29,7 @@ class Move {
   const Ply& ply(piece::color color) const;
 
  private:
-  std::array<types::ply_optional, 2> ply_;
+  std::array<types::PlyOptional, 2> ply_;
 };
 }  // namespace chess
 

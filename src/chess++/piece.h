@@ -7,10 +7,20 @@
 #include "constants.h"
 
 /**API Example
- * Piece piece(type, color);
+ * Piece piece(piece::rook, piece::black);
  *
- * // Get piece information
+ * // Get piece type
  * piece.type();
+ * 
+ * // Set piece type
+ * piece.type(piece::knight);
+ * 
+ * // Get piece color
+ * piece.color();
+ * 
+ * // Set piece color
+ * piece.color(piece::white);
+ * 
  * piece.color();
  */
 
@@ -32,8 +42,8 @@ class Piece {
 }  // namespace chess
 
 namespace chess::types {
-using piece_optional = std::optional<Piece>;
-using piece_vector = std::vector<Piece>;
+using PieceOptional = std::optional<Piece>;
+using PieceVector = std::vector<Piece>;
 using nullpiece = std::nullopt_t;
 }  // namespace chess::types
 
