@@ -5,7 +5,6 @@
 #include "constants.h"
 #include "move.h"
 #include "piece.h"
-#include "ply.h"
 #include "square.h"
 
 #endif

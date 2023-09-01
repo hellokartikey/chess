@@ -11,16 +11,16 @@
  *
  * // Get piece type
  * piece.type();
- * 
+ *
  * // Set piece type
  * piece.type(piece::knight);
- * 
+ *
  * // Get piece color
  * piece.color();
- * 
+ *
  * // Set piece color
  * piece.color(piece::white);
- * 
+ *
  * piece.color();
  */
 

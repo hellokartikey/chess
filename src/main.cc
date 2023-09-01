@@ -11,15 +11,11 @@ using namespace chess::square;
 using namespace chess::move;
 
 int main() {
+  Board board;
   Piece piece(pawn, black);
-  Ply ply1(piece, queen_promotion_capture, E2, E4);
-  Ply ply2(piece, queen_promotion_capture, E2, E4);
+  Square sq(E4, piece);
 
-  Move move1;
-
-  Move move(ply1, ply2);
-
-  fmt::print("{}\n", move);
+  fmt::print("{}\n", board);
 
   return 0;
 }

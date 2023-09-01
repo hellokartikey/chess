@@ -33,8 +33,37 @@ std::string format_as(piece::color color) {
 }  // namespace chess::piece
 
 namespace chess {
-std::string format_as(Move move) {
-  return fmt::format("{} {}", move.ply(piece::black), move.ply(piece::white));
+std::string format_as(Board board) {
+  std::string files = "ABCDEFGH";
+  std::string head = "  ";
+  for (int i = 0; i < 8; i++) {
+    head += files[i];
+    head += "   ";
+  }
+  head += "\n";
+
+  std::string hr = "+";
+  for (int i = 0; i < 8; i++) {
+    hr += "---+";
+  }
+
+  std::string f = head + hr + "\n";
+
+  for (int i = 0; i < 8; i++) {
+    f += "|";
+    for (int j = 0; j < 8; j++) {
+      square::name sq = square::name(i * 8 + j);
+      if (board.square(sq).has_piece()) {
+        f += fmt::format(" {} |", board.square(sq).piece());
+      } else {
+        f += "   |";
+      }
+    }
+    f += fmt::format(" {}\n", board.square(square::name(i * 8)).rank());
+    f += hr + "\n";
+  }
+
+  return f;
 }
 
 std::string format_as(Piece piece) {
@@ -42,14 +71,26 @@ std::string format_as(Piece piece) {
   return fmt::format("{}", rep[piece.color()][piece.type()]);
 }
 
-std::string format_as(Ply ply) {
+std::string format_as(Move move) {
   std::array<std::string, 2> capture = {"", "x"};
-  return fmt::format("{}{}{}{}", ply.piece(), ply.from(),
-                     capture[ply.capture()], ply.to());
+  return fmt::format("{}{}{}{}", move.piece(), move.from(),
+                     capture[move.capture()], move.to());
 }
 
-std::string format_as(Square sq) {
-  return fmt::format("  {}\n+---+\n| {} | {}\n+---+", sq.file(), sq.rank(),
-                     sq.piece());
+std::string format_as(Square square) {
+  std::string f = fmt::format("  {}\n", square.file());
+  f += "+---+\n";
+  if (square.has_piece()) {
+    f += fmt::format("| {} | {}\n", square.piece(), square.rank());
+  } else {
+    f += fmt::format("|   | {}\n", square.rank());
+  }
+  f += "+---+";
+
+  return f;
 }
 }  // namespace chess
+
+namespace chess::types {
+std::string format_as(nullpiece np) { return " "; }
+}  // namespace chess::types

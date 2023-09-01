@@ -4,10 +4,10 @@
 #include <array>
 #include <string>
 
+#include "board.h"
 #include "constants.h"
 #include "move.h"
 #include "piece.h"
-#include "ply.h"
 #include "square.h"
 
 namespace chess::square {
@@ -22,10 +22,14 @@ std::string format_as(piece::color color);
 }  // namespace chess::piece
 
 namespace chess {
+std::string format_as(Board board);
 std::string format_as(Move move);
 std::string format_as(Piece piece);
-std::string format_as(Ply ply);
 std::string format_as(Square square);
 }  // namespace chess
+
+namespace chess::types {
+std::string format_as(nullpiece np);
+}
 
 #endif

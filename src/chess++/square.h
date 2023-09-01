@@ -1,6 +1,7 @@
 #ifndef CHESSPP_SQUARE_H
 #define CHESSPP_SQUARE_H
 
+#include <exception>
 #include <vector>
 
 #include "constants.h"
@@ -24,6 +25,13 @@
  * // Get piece reference
  * square.piece();
  */
+
+namespace chess::exception {
+class square_empty : std::exception {
+ public:
+  const char* what() const noexcept;
+};
+}  // namespace chess::exception
 
 namespace chess {
 class Square {

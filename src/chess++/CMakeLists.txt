@@ -6,7 +6,6 @@ add_library(
   constants.h constants.cc
   move.h      move.cc 
   piece.h     piece.cc
-  ply.h       ply.cc
   square.h    square.cc 
 )
 
