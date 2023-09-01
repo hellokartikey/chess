@@ -5,6 +5,7 @@
 #include <optional>
 #include <string_view>
 
+#include "constants.h"
 #include "ply.h"
 
 /**API Example
@@ -26,14 +27,13 @@ namespace chess {
 class Move {
  public:
   Move();
-  Move(Ply& ply_white, Ply& ply_black);
+  Move(Ply& white, Ply& black);
 
-  void ply(constants::color color, Ply& ply);
-  Ply& ply(constants::color color);
+  void ply(piece::color color, Ply& ply);
+  const Ply& ply(piece::color color) const;
 
  private:
-  int index_;
-  std::array<std::optional<Ply>, 2> ply_;
+  std::array<types::ply_optional, 2> ply_;
 };
 }  // namespace chess
 

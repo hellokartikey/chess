@@ -28,21 +28,21 @@
 namespace chess {
 class Square {
  public:
-  Square(constants::square square);
+  Square(square::name square);
 
-  Square(constants::square square, Piece& piece);
+  Square(square::name square, Piece& piece);
 
-  constants::square name();
-  constants::file file();
-  constants::rank rank();
+  const square::name name() const;
+  const square::file file() const;
+  const square::rank rank() const;
 
-  Piece& piece();
+  const Piece& piece() const;
   void piece(Piece& piece);
   void piece(types::nullpiece nullpiece);
-  bool has_piece();
+  const bool has_piece() const;
 
  private:
-  constants::square name_;
+  square::name name_;
   types::piece_optional piece_;
 };
 }  // namespace chess

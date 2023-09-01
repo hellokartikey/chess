@@ -1,14 +1,14 @@
 #include "move.h"
 
 namespace chess {
-Move::Move() { index_ = 0; }
+Move::Move() {}
 
-Move::Move(Ply& ply_white, Ply& ply_black) {
-  ply_[constants::white] = ply_white;
-  ply_[constants::black] = ply_black;
+Move::Move(Ply& white, Ply& black) {
+  ply_[piece::white] = white;
+  ply_[piece::black] = black;
 }
 
-void Move::ply(constants::color color, Ply& ply) { ply_[color] = ply; }
+void Move::ply(piece::color color, Ply& ply) { ply_[color] = ply; }
 
-Ply& Move::ply(constants::color color) { return ply_[color].value(); }
+const Ply& Move::ply(piece::color color) const { return ply_[color].value(); }
 }  // namespace chess

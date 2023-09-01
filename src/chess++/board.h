@@ -6,6 +6,7 @@
 
 #include "constants.h"
 #include "move.h"
+#include "piece.h"
 #include "square.h"
 
 /**API Example
@@ -28,9 +29,9 @@ class Board {
   Board();
   Board(std::string_view fen);
 
-  Square& square(constants::square square);
+  const Square& square(square::name square) const;
 
-  std::string_view fen();
+  std::string_view fen() const;
   void fen(std::string_view fen);
 
  private:

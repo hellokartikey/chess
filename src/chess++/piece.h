@@ -17,17 +17,17 @@
 namespace chess {
 class Piece {
  public:
-  Piece(constants::piece type, constants::color color);
+  Piece(piece::type type, piece::color color);
 
-  constants::piece type();
-  void type(constants::piece piece);
+  const piece::type type() const;
+  void type(piece::type piece);
 
-  constants::color color();
-  void color(constants::color color);
+  const piece::color color() const;
+  void color(piece::color color);
 
  private:
-  constants::piece type_;
-  constants::color color_;
+  piece::type type_;
+  piece::color color_;
 };
 }  // namespace chess
 
