@@ -4,3 +4,5 @@ Checks: >
     google-*,
     modernize-*,
     readability-*
+
+FormatStyle: 'file'

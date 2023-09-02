@@ -10,10 +10,9 @@ using namespace chess::piece;
 using namespace chess::square;
 using namespace chess::move;
 
-int main() {
+auto main() -> int {
   Board board;
   Piece piece(pawn, black);
-  Square sq(E4, piece);
 
   fmt::print("{}\n", board);
 

@@ -15,6 +15,7 @@
  *
  * // Get reference to square object
  * board.square(square::D4);
+ * board[square::E4] = sq;
  *
  * // Get FEN string for current board state
  * board.fen();
@@ -34,8 +35,10 @@ class Board {
   std::string_view fen() const;
   void fen(std::string_view fen);
 
+  Square& operator[](square::name square);
+
  private:
-  types::SquareVector board_;
+  types::SquareArray board_;
   types::PieceVector pieces_;
 };
 }  // namespace chess

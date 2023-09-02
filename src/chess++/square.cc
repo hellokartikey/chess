@@ -7,6 +7,8 @@ const char* square_empty::what() const noexcept {
 }  // namespace chess::exception
 
 namespace chess {
+Square::Square() {}
+
 Square::Square(square::name square) {
   name_ = square;
   piece_ = nullpiece;

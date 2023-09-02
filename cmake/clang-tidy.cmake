@@ -1,6 +1,8 @@
-file(GLOB_RECURSE ALL_SOURCE_FILES *.cc *.h)
+file(GLOB_RECURSE ALL_SOURCE_FILES src/*.cc src/*.h)
 
-add_custom_target(
-    clang-tidy
-    ${ALL_SOURCE_FILES}
+set(
+  CMAKE_CXX_CLAG_TIDY
+  clang-tidy;
+  -format-style='file';
+  -header-filter=${ALL_SOURCE_FILES}
 )

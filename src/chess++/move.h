@@ -70,12 +70,7 @@ class Move {
 }  // namespace chess
 
 namespace chess::types {
-using MoveOptional = std::optional<Move>;
-using nullmove = std::nullopt_t;
+using MoveList = std::vector<Move>;
 }  // namespace chess::types
-
-namespace chess {
-constexpr types::MoveOptional nullmove = std::nullopt;
-}
 
 #endif

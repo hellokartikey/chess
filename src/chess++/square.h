@@ -1,6 +1,7 @@
 #ifndef CHESSPP_SQUARE_H
 #define CHESSPP_SQUARE_H
 
+#include <array>
 #include <exception>
 #include <vector>
 
@@ -36,6 +37,7 @@ class square_empty : std::exception {
 namespace chess {
 class Square {
  public:
+  Square();
   Square(square::name square);
   Square(square::name square, Piece& piece);
 
@@ -55,7 +57,7 @@ class Square {
 }  // namespace chess
 
 namespace chess::types {
-using SquareVector = std::vector<Square>;
-}
+using SquareArray = std::array<Square, square::num_squares>;
+}  // namespace chess::types
 
 #endif

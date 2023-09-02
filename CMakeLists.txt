@@ -17,6 +17,7 @@ if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.24.0")
 endif()
 
 include(cmake/clang-format.cmake)
+include(cmake/clang-tidy.cmake)
 
 include(FetchContent)
 Set(FETCHCONTENT_QUIET FALSE)
