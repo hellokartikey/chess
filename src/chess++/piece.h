@@ -7,7 +7,7 @@
 #include "constants.h"
 
 /**API Example
- * Piece piece(piece::rook, piece::black);
+ * Piece piece(piece::rook | piece::black);
  *
  * // Get piece type
  * piece.type();
@@ -20,6 +20,12 @@
  *
  * // Set piece color
  * piece.color(piece::white);
+ *
+ * // Get underlying enum
+ * piece.piece();
+ *
+ * // Set underlying enum directly
+ * piece.piece(white_knight);
  *
  * piece.color();
  */

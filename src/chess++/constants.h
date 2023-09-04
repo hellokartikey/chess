@@ -51,12 +51,6 @@ enum file { A = 0, B = 1, C = 2, D = 3, E = 4, F = 5, G = 6, H = 7 };
 enum rank { R1 = 0, R2 = 1, R3 = 2, R4 = 3, R5 = 4, R6 = 5, R7 = 6, R8 = 7 };
 }  // namespace chess::square
 
-// namespace chess::piece {
-// enum type { pawn, knight, bishop, rook, queen, king };
-
-// enum color { white = 0x10, black = 0x20 };
-// }  // namespace chess::piece
-
 namespace chess::piece {
 // clang-format off
 enum attr {
