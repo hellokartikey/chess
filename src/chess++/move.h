@@ -13,12 +13,6 @@
  * // Get move type
  * move.type();
  *
- * // Get player color
- * move.color();
- *
- * // Get piece type
- * move.piece_type();
- *
  * // Get piece object (const ref)
  * move.piece()
  *
@@ -43,10 +37,6 @@ class Move {
   Move(Piece& piece, move::type type, square::name from, square::name to);
 
   const move::type type() const;
-
-  const piece::color color() const;
-
-  const piece::type piece_type() const;
 
   const Piece& piece() const;
 

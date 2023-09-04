@@ -24,6 +24,7 @@ Set(FETCHCONTENT_QUIET FALSE)
 
 include(cmake/fmt.cmake)
 include(cmake/gtest.cmake)
+include(cmake/lexy.cmake)
 
 add_executable(${BUILD_TARGET})
 

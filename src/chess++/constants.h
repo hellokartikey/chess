@@ -33,7 +33,8 @@
 namespace chess::square {
 constexpr int num_squares = 64;
 
-enum name {  // clang-format off
+// clang-format off
+enum name {
   A1, B1, C1, D1, E1, F1, G1, H1,
   A2, B2, C2, D2, E2, F2, G2, H2,
   A3, B3, C3, D3, E3, F3, G3, H3,
@@ -42,17 +43,50 @@ enum name {  // clang-format off
   A6, B6, C6, D6, E6, F6, G6, H6,
   A7, B7, C7, D7, E7, F7, G7, H7,
   A8, B8, C8, D8, E8, F8, G8, H8
-};  // clang-format on
+};
+// clang-format on
 
 enum file { A = 0, B = 1, C = 2, D = 3, E = 4, F = 5, G = 6, H = 7 };
 
 enum rank { R1 = 0, R2 = 1, R3 = 2, R4 = 3, R5 = 4, R6 = 5, R7 = 6, R8 = 7 };
 }  // namespace chess::square
 
-namespace chess::piece {
-enum type { pawn, knight, bishop, rook, queen, king };
+// namespace chess::piece {
+// enum type { pawn, knight, bishop, rook, queen, king };
 
-enum color { white = 0, black = 1 };
+// enum color { white = 0x10, black = 0x20 };
+// }  // namespace chess::piece
+
+namespace chess::piece {
+// clang-format off
+enum attr {
+  pawn   = 0x00,
+  knight = 0x01,
+  bishop = 0x02,
+  rook   = 0x03,
+  queen  = 0x04,
+  king   = 0x05,
+
+  white  = 0x10,
+  black  = 0x20
+};
+
+enum piece {
+  white_pawn   = white | pawn,
+  white_knight = white | knight,
+  white_bishop = white | bishop,
+  white_rook   = white | rook,
+  white_queen  = white | queen,
+  white_king   = white | king,
+
+  black_pawn   = black | pawn,
+  black_knight = black | knight,
+  black_bishop = black | bishop,
+  black_rook   = black | rook,
+  black_queen  = black | queen,
+  black_king   = black | king
+};
+// clang-format on
 }  // namespace chess::piece
 
 namespace chess::move {

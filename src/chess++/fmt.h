@@ -2,6 +2,7 @@
 #define CHESSPP_FMT_H
 
 #include <array>
+#include <map>
 #include <string>
 
 #include "board.h"
@@ -17,8 +18,8 @@ std::string format_as(square::rank rank);
 }  // namespace chess::square
 
 namespace chess::piece {
-std::string format_as(piece::type piece);
-std::string format_as(piece::color color);
+std::string format_as(piece piece);
+std::string format_as(attr attr);
 }  // namespace chess::piece
 
 namespace chess {

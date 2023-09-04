@@ -20,15 +20,24 @@ std::string format_as(square::rank rank) {
 }  // namespace chess::square
 
 namespace chess::piece {
-std::string format_as(piece::type piece) {
-  std::array<std::string, 6> rep = {"pawn", "knight", "bishop",
-                                    "rook", "queen",  "king"};
-  return rep[piece];
+std::string format_as(piece piece) {
+  return fmt::format("{}{}", piece & 0xf0, piece & 0x0f);
 }
 
-std::string format_as(piece::color color) {
-  std::array<std::string, 2> rep = {"white", "black"};
-  return rep[color];
+std::string format_as(attr attr) {
+  std::map<int, std::string> rep;
+
+  rep[pawn] = "pawn";
+  rep[knight] = "knight";
+  rep[bishop] = "bishop";
+  rep[rook] = "rook";
+  rep[queen] = "queen";
+  rep[king] = "king";
+
+  rep[white] = "white";
+  rep[black] = "black";
+
+  return rep[attr];
 }
 }  // namespace chess::piece
 

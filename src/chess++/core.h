@@ -3,6 +3,7 @@
 
 #include "board.h"
 #include "constants.h"
+#include "fen.h"
 #include "move.h"
 #include "piece.h"
 #include "square.h"

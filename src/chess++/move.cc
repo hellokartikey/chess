@@ -10,10 +10,6 @@ Move::Move(Piece& piece, move::type type, square::name from, square::name to)
 
 const move::type Move::type() const { return type_; }
 
-const piece::color Move::color() const { return piece_.color(); }
-
-const piece::type Move::piece_type() const { return piece_.type(); }
-
 const Piece& Move::piece() const { return piece_; }
 
 const square::name Move::from() const { return from_; }
