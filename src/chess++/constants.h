@@ -34,7 +34,7 @@ namespace chess::square {
 constexpr int num_squares = 64;
 
 // clang-format off
-enum name {
+enum name : std::uint8_t {
   A1, B1, C1, D1, E1, F1, G1, H1,
   A2, B2, C2, D2, E2, F2, G2, H2,
   A3, B3, C3, D3, E3, F3, G3, H3,
@@ -46,14 +46,32 @@ enum name {
 };
 // clang-format on
 
-enum file { A = 0, B = 1, C = 2, D = 3, E = 4, F = 5, G = 6, H = 7 };
+enum file : std::uint8_t {
+  A = 0,
+  B = 1,
+  C = 2,
+  D = 3,
+  E = 4,
+  F = 5,
+  G = 6,
+  H = 7
+};
 
-enum rank { R1 = 0, R2 = 1, R3 = 2, R4 = 3, R5 = 4, R6 = 5, R7 = 6, R8 = 7 };
+enum rank : std::uint8_t {
+  R1 = 0,
+  R2 = 1,
+  R3 = 2,
+  R4 = 3,
+  R5 = 4,
+  R6 = 5,
+  R7 = 6,
+  R8 = 7
+};
 }  // namespace chess::square
 
 namespace chess::piece {
 // clang-format off
-enum attr {
+enum attr : std::uint8_t {
   pawn   = 0x00,
   knight = 0x01,
   bishop = 0x02,
@@ -65,7 +83,7 @@ enum attr {
   black  = 0x20
 };
 
-enum piece {
+enum piece : std::uint8_t {
   white_pawn   = white | pawn,
   white_knight = white | knight,
   white_bishop = white | bishop,
@@ -84,7 +102,7 @@ enum piece {
 }  // namespace chess::piece
 
 namespace chess::move {
-enum move {
+enum move : std::int8_t {
   north = -8,
   south = +8,
   east = +1,
@@ -101,7 +119,7 @@ enum move {
   knight_ws
 };
 
-enum type {
+enum type : std::uint8_t {
   quiet = 0,
   double_pawn_push = 1,
   king_castle = 2,

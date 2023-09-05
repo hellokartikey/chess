@@ -1,7 +1,9 @@
 #include "piece.h"
 
 namespace chess {
-Piece::Piece(piece::piece piece) { piece_ = piece; }
+Piece::Piece(piece::piece type) { piece_ = type; }
+
+Piece::Piece(int type) { Piece(static_cast<piece::piece>(type)); }
 
 const piece::piece Piece::piece() const { return piece_; }
 

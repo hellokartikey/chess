@@ -42,6 +42,19 @@ std::string format_as(attr attr) {
 }  // namespace chess::piece
 
 namespace chess {
+std::string format_as(Bitboard bitboard) {
+  std::string rep = "";
+  for (int i = 0; i < square::num_squares; i++) {
+    rep += fmt::format("{:d}", bitboard[square::name(i)]);
+    if ((i + 1) % 8) {
+      rep += " ";
+    } else {
+      rep += "\n";
+    }
+  }
+  return rep;
+}
+
 std::string format_as(Board board) {
   std::string files = "ABCDEFGH";
   std::string head = "  ";

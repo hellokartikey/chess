@@ -5,6 +5,8 @@ Board::Board() {
   for (int i = 0; i < square::num_squares; i++) {
     board_[i] = Square(square::name(i));
   }
+
+  pieces_.reserve(32);
 }
 
 Board::Board(std::string_view fen) {}

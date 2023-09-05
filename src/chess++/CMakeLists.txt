@@ -1,10 +1,11 @@
 add_library(
   chess++ 
   core.h
-  fen.h       fen.cc
-  fmt.h       fmt.cc
+  bitboard.h  bitboard.cc
   board.h     board.cc
   constants.h constants.cc
+  fen.h       fen.cc
+  fmt.h       fmt.cc
   move.h      move.cc 
   piece.h     piece.cc
   square.h    square.cc 

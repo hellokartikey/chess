@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 
+#include "bitboard.h"
 #include "board.h"
 #include "constants.h"
 #include "move.h"
@@ -23,6 +24,7 @@ std::string format_as(attr attr);
 }  // namespace chess::piece
 
 namespace chess {
+std::string format_as(Bitboard bitboard);
 std::string format_as(Board board);
 std::string format_as(Move move);
 std::string format_as(Piece piece);

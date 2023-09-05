@@ -34,6 +34,7 @@ namespace chess {
 class Piece {
  public:
   Piece(piece::piece type);
+  Piece(int type);
 
   const piece::piece piece() const;
   void piece(piece::piece piece);
