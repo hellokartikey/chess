@@ -19,12 +19,11 @@ endif()
 include(cmake/clang-format.cmake)
 include(cmake/clang-tidy.cmake)
 
-include(FetchContent)
-Set(FETCHCONTENT_QUIET FALSE)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
-include(cmake/fmt.cmake)
-include(cmake/gtest.cmake)
-include(cmake/lexy.cmake)
+find_package(fmt REQUIRED)
+find_package(GTest REQUIRED)
+find_package(Boost)
 
 add_executable(${BUILD_TARGET})
 

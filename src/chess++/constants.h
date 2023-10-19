@@ -30,11 +30,11 @@
  * piece::black
  */
 
-namespace chess::square {
-constexpr int num_squares = 64;
+namespace chess::board {
+constexpr int NUM_SQUARES = 64;
 
 // clang-format off
-enum name : std::uint8_t {
+enum square : std::uint8_t {
   A1, B1, C1, D1, E1, F1, G1, H1,
   A2, B2, C2, D2, E2, F2, G2, H2,
   A3, B3, C3, D3, E3, F3, G3, H3,
@@ -42,7 +42,9 @@ enum name : std::uint8_t {
   A5, B5, C5, D5, E5, F5, G5, H5,
   A6, B6, C6, D6, E6, F6, G6, H6,
   A7, B7, C7, D7, E7, F7, G7, H7,
-  A8, B8, C8, D8, E8, F8, G8, H8
+  A8, B8, C8, D8, E8, F8, G8, H8,
+
+  NA
 };
 // clang-format on
 
@@ -67,38 +69,22 @@ enum rank : std::uint8_t {
   R7 = 6,
   R8 = 7
 };
-}  // namespace chess::square
+}  // namespace chess::board
 
 namespace chess::piece {
-// clang-format off
-enum attr : std::uint8_t {
-  pawn   = 0x00,
-  knight = 0x01,
-  bishop = 0x02,
-  rook   = 0x03,
-  queen  = 0x04,
-  king   = 0x05,
-
-  white  = 0x10,
-  black  = 0x20
+enum type : std::uint8_t {
+  PAWN = 0x00,
+  KNIGHT = 0x01,
+  BISHOP = 0x02,
+  ROOK = 0x03,
+  QUEEN = 0x04,
+  KING = 0x05,
+  EMPTY = 0x06
 };
 
-enum piece : std::uint8_t {
-  white_pawn   = white | pawn,
-  white_knight = white | knight,
-  white_bishop = white | bishop,
-  white_rook   = white | rook,
-  white_queen  = white | queen,
-  white_king   = white | king,
+enum color : std::uint8_t { WHITE = 0, BLACK = 1, BLANK = 3 };
 
-  black_pawn   = black | pawn,
-  black_knight = black | knight,
-  black_bishop = black | bishop,
-  black_rook   = black | rook,
-  black_queen  = black | queen,
-  black_king   = black | king
-};
-// clang-format on
+enum state : std::uint8_t { DEAD = 0, ALIVE = 1 };
 }  // namespace chess::piece
 
 namespace chess::move {

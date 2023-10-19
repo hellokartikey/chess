@@ -1,63 +1,41 @@
 #ifndef CHESSPP_PIECE_H
 #define CHESSPP_PIECE_H
 
-#include <optional>
 #include <vector>
 
 #include "constants.h"
 
-/**API Example
- * Piece piece(piece::rook | piece::black);
- *
- * // Get piece type
- * piece.type();
- *
- * // Set piece type
- * piece.type(piece::knight);
- *
- * // Get piece color
- * piece.color();
- *
- * // Set piece color
- * piece.color(piece::white);
- *
- * // Get underlying enum
- * piece.piece();
- *
- * // Set underlying enum directly
- * piece.piece(white_knight);
- *
- * piece.color();
- */
-
 namespace chess {
 class Piece {
  public:
-  Piece(piece::piece type);
-  Piece(int type);
+  Piece();
+  Piece(piece::type type, piece::color color, board::square square,
+        piece::state state = piece::ALIVE);
 
-  const piece::piece piece() const;
-  void piece(piece::piece piece);
+  piece::type type() const;
+  void type(piece::type type);
 
-  const piece::attr color() const;
-  void color(piece::attr color);
+  piece::color color() const;
+  void color(const piece::color color);
 
-  const piece::attr type() const;
-  void type(piece::attr type);
+  board::square square() const;
+  void square(const board::square square);
+
+  piece::state state() const;
+  void state(const piece::state state);
 
  private:
-  piece::piece piece_;
+  struct {
+    piece::type _type : 3;
+    piece::color _color : 1;
+    board::square _square : 6;
+    piece::state _state : 1;
+  };
 };
 }  // namespace chess
 
 namespace chess::types {
-using PieceOptional = std::optional<Piece>;
-using PieceVector = std::vector<Piece>;
-using nullpiece = std::nullopt_t;
-}  // namespace chess::types
-
-namespace chess {
-constexpr types::nullpiece nullpiece = std::nullopt;
+using piece_vector = std::vector<Piece>;
 }
 
 #endif

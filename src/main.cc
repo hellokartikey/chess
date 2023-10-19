@@ -1,31 +1,17 @@
-#include <fmt/format.h>
-
-#include <iostream>
-#include <lexy/action/parse.hpp>
-#include <lexy/input/string_input.hpp>
-#include <string>
+#include <fmt/core.h>
 
 #include "chess++/core.h"
-#include "chess++/fmt.h"
 
 using namespace chess;
 
 auto main() -> int {
-  Bitboard bitboard(0xaa55aa55aa55aa55);
-  Board board;
-  Piece piece(piece::white | piece::pawn);
-  Move move(piece, move::quiet, square::E2, square::E2);
-  Square square;
+  Piece piece(piece::ROOK, piece::BLACK, board::E4, piece::DEAD);
 
-  fmt::print("Bitboard {}\n", sizeof(bitboard));
-  fmt::print("Board    {}\n", sizeof(board));
-  fmt::print("Piece    {}\n", sizeof(piece));
-  fmt::print("Move     {}\n", sizeof(move));
-  fmt::print("Square   {}\n", sizeof(square));
-  fmt::print("PieceOpt {}\n", sizeof(types::PieceOptional));
-  fmt::print("PieceVec {}\n", sizeof(types::PieceVector));
+  fmt::print("type {}\n", piece.type() == piece::ROOK);
+  fmt::print("color {}\n", piece.color() == piece::BLACK);
+  fmt::print("square {}\n", piece.square() == board::E4);
+  fmt::print("status {}\n", piece.state() == piece::DEAD);
 
-  fmt::print("{}", bitboard);
-  fmt::print("{}", board);
+  fmt::print("{}\n", sizeof(piece));
   return 0;
 }

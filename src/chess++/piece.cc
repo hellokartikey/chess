@@ -1,23 +1,34 @@
 #include "piece.h"
 
 namespace chess {
-Piece::Piece(piece::piece type) { piece_ = type; }
-
-Piece::Piece(int type) { Piece(static_cast<piece::piece>(type)); }
-
-const piece::piece Piece::piece() const { return piece_; }
-
-void Piece::piece(piece::piece piece) { piece_ = piece; }
-
-const piece::attr Piece::color() const { return piece::attr(piece_ & 0xf0); }
-
-void Piece::color(piece::attr color) {
-  piece_ = piece::piece((piece_ & 0x0f) | color);
+Piece::Piece() {
+  type(piece::PAWN);
+  color(piece::WHITE);
+  square(board::A1);
+  state(piece::ALIVE);
 }
 
-const piece::attr Piece::type() const { return piece::attr(piece_ & 0x0f); }
-
-void Piece::type(piece::attr type) {
-  piece_ = piece::piece((piece_ & 0xf0) | type);
+Piece::Piece(piece::type type, piece::color color, board::square square,
+             piece::state state) {
+  this->type(type);
+  this->color(color);
+  this->square(square);
+  this->state(state);
 }
+
+piece::type Piece::type() const { return _type; }
+
+void Piece::type(piece::type type) { _type = type; }
+
+piece::color Piece::color() const { return _color; }
+
+void Piece::color(const piece::color color) { _color = color; }
+
+board::square Piece::square() const { return _square; }
+
+void Piece::square(const board::square square) { _square = square; }
+
+piece::state Piece::state() const { return _state; }
+
+void Piece::state(const piece::state state) { _state = state; }
 }  // namespace chess
